@@ -1,21 +1,32 @@
-import React from 'react';
-import logo from './nfap.jpg';
+import React from 'react'; 
 import './App.css';
+import Navigation from './component/navigation'; 
+import { BrowserRouter as Router,
+  Switch,
+  Route } from 'react-router-dom'; 
+import Home from './component/home';
+import About from './component/about';
+import SignUp from './component/signup';
 
 class App extends React.Component {
   render() {  
-  return( 
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} alt="logo"/>
-        <h1>Did you fap today? </h1>
-        <p>
-          <button type="button" class="btn btn-dark btn-lg">Yes?</button>
-          <br/>
-          <button type="button" class="btn btn-light btn-lg">No.. </button>
-        </p>
-     </header>
-    </div>
+  return(  
+      <Router>
+        <div className="App">  
+            <Navigation />  
+            <Switch>
+                <Route exact path="/">
+                    <Home />
+                </Route>
+                <Route path="/about">
+                    <About />
+                </Route>
+                <Route path="/signup">
+                    <SignUp />
+                </Route>
+              </Switch>   
+          </div>
+      </Router>
     );
   }
 }
