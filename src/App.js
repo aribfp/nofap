@@ -2,18 +2,23 @@ import React from 'react';
 import logo from './nfap.jpg';
 import './App.css';
 
-function App() {
-  return (
+class App extends React.Component {
+  render() {  
+  return( 
     <div className="App">
       <header className="App-header">
-        <img src={logo} alt="logo" />
-        <br/> <br/> <br/>
+        <img src={logo} alt="logo"/>
+        <h1>Did you fap today? </h1>
         <p>
-          NO FAAAAAAAAAAAAAAAAAAP!!!
+          <button type="button" class="btn btn-dark btn-lg">Yes?</button>
+          <br/>
+          <button type="button" class="btn btn-light btn-lg">No.. </button>
         </p>
-      </header>
+     </header>
     </div>
-  );
+    );
+  }
 }
+
 
 export default App;
